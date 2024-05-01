@@ -9,17 +9,27 @@
     }
   },
   "profiles": {
-    "http": {
+    "TemplateApi.Development": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://localhost:5200",
+      "applicationUrl": "http://localhost:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "IIS Express": {
+    "TemplateApi.Production": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "applicationUrl": "http://localhost:5001",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Production"
+      }
+    },
+    "IIS Express": { //Projeyi publish aldığımız zaman bakılan yer... Development yazıyorsa development'a ait connection kullanılacak.
       "commandName": "IISExpress",
       "launchBrowser": true,
       "launchUrl": "swagger",
