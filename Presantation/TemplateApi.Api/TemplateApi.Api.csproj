@@ -20,6 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\TemplateApi.Application\TemplateApi.Application.csproj" />
     <ProjectReference Include="..\..\Infrastructure\TemplateApi.Persistence\TemplateApi.Persistence.csproj" />
   </ItemGroup>
 

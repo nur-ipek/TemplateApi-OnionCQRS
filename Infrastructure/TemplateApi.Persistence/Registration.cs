@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TemplateApi.Application.Interfaces.Repositories;
 using TemplateApi.Persistence.Context;
+using TemplateApi.Persistence.Repositories;
 
 namespace TemplateApi.Persistence
 {
@@ -17,6 +19,8 @@ namespace TemplateApi.Persistence
             services.AddDbContext<AppDbContext>(opt =>
             opt.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
             );
+
+            services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
         }
 
         
