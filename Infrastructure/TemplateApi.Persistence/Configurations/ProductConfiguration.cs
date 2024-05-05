@@ -41,7 +41,7 @@ namespace TemplateApi.Persistence.Configurations
                 IsDeleted = false
             };
 
-            builder.HasData(product, product);
+            builder.HasData(product, product2);
         }
     }
 }
