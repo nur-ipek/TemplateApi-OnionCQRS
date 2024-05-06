@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TemplateApi.Application.Interfaces.Repositories;
+using TemplateApi.Application.Interfaces.UnitOfWorks;
 using TemplateApi.Persistence.Context;
 using TemplateApi.Persistence.Repositories;
+using TemplateApi.Persistence.UnitOfWorks;
 
 namespace TemplateApi.Persistence
 {
@@ -22,6 +24,10 @@ namespace TemplateApi.Persistence
 
             services.AddScoped(typeof(IReadRepository<>), typeof(ReadRepository<>));
             services.AddScoped(typeof(IWriteRepository<>), typeof(WriteRepository<>));
+
+            //DI
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+
         }
 
         
