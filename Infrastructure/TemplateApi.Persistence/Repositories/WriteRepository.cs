@@ -21,7 +21,7 @@ namespace TemplateApi.Persistence.Repositories
 
         public async Task AddAsync(T entity)
         {
-            await Table.AddAsync(entity),;
+            await Table.AddAsync(entity);
         }
 
         public async Task AddRangeAsync(IList<T> entities)
