@@ -9,15 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presantation", "Presantation", "{25B60484-47E3-4ABB-910B-15DE2207F485}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateApi.Application", "Core\TemplateApi.Application\TemplateApi.Application.csproj", "{2ADCE1F4-C4FA-47FD-9C15-6C6F364D0737}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateApi.Application", "Core\TemplateApi.Application\TemplateApi.Application.csproj", "{2ADCE1F4-C4FA-47FD-9C15-6C6F364D0737}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateApi.Domain", "Core\TemplateApi.Domain\TemplateApi.Domain.csproj", "{B01DF29F-9697-49F9-84F5-D1FB96A8270C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateApi.Domain", "Core\TemplateApi.Domain\TemplateApi.Domain.csproj", "{B01DF29F-9697-49F9-84F5-D1FB96A8270C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateApi.Infrastructure", "Infrastructure\TemplateApi.Infrastructure\TemplateApi.Infrastructure.csproj", "{E84D71E6-18E1-4AEC-8DC5-B5B43E3EA57F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateApi.Infrastructure", "Infrastructure\TemplateApi.Infrastructure\TemplateApi.Infrastructure.csproj", "{E84D71E6-18E1-4AEC-8DC5-B5B43E3EA57F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateApi.Persistence", "Infrastructure\TemplateApi.Persistence\TemplateApi.Persistence.csproj", "{34927999-6EB6-453F-9E85-0B5090E81FFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateApi.Persistence", "Infrastructure\TemplateApi.Persistence\TemplateApi.Persistence.csproj", "{34927999-6EB6-453F-9E85-0B5090E81FFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateApi.Api", "Presantation\TemplateApi.Api\TemplateApi.Api.csproj", "{B45D096A-17C9-4B5C-8AD8-8B044FC94730}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TemplateApi.Api", "Presantation\TemplateApi.Api\TemplateApi.Api.csproj", "{B45D096A-17C9-4B5C-8AD8-8B044FC94730}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateApi.Mapper", "Mapper\TemplateApi.Mapper.csproj", "{C75A37AC-F3DA-4B5C-870F-81B0C0612F01}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B45D096A-17C9-4B5C-8AD8-8B044FC94730}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B45D096A-17C9-4B5C-8AD8-8B044FC94730}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B45D096A-17C9-4B5C-8AD8-8B044FC94730}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C75A37AC-F3DA-4B5C-870F-81B0C0612F01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C75A37AC-F3DA-4B5C-870F-81B0C0612F01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C75A37AC-F3DA-4B5C-870F-81B0C0612F01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C75A37AC-F3DA-4B5C-870F-81B0C0612F01}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{E84D71E6-18E1-4AEC-8DC5-B5B43E3EA57F} = {3762B8B4-88FE-4AA8-9185-92024027D6E5}
 		{34927999-6EB6-453F-9E85-0B5090E81FFF} = {3762B8B4-88FE-4AA8-9185-92024027D6E5}
 		{B45D096A-17C9-4B5C-8AD8-8B044FC94730} = {25B60484-47E3-4ABB-910B-15DE2207F485}
+		{C75A37AC-F3DA-4B5C-870F-81B0C0612F01} = {CFDFE70E-78E8-446D-8F13-2FAE57AEC520}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D34FCB26-E806-4679-AD7D-189D28F568D7}
