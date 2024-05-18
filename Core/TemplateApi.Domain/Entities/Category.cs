@@ -21,6 +21,6 @@ namespace TemplateApi.Domain.Entities
         public int ParentId { get; set; }
         public int Priorty { get; set; }
         public ICollection<Detail> Details { get; set; }
-        public ICollection<Product> Products { get; set; } //Default convention
+        public ICollection<ProductCategory> ProductCategories { get; set; } //Default convention
     }
 }

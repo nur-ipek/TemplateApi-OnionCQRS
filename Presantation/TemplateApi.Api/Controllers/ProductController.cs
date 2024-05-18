@@ -1,5 +1,7 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using TemplateApi.Application.Features.Products.Command.CreateProduct;
+using TemplateApi.Application.Features.Products.Command.UpdateProduct;
 using TemplateApi.Application.Features.Products.Queries.GetAllProducts;
 
 namespace TemplateApi.Api.Controllers
@@ -19,6 +21,22 @@ namespace TemplateApi.Api.Controllers
             var response = await mediator.Send(new GetAllProductsQueryRequest());
 
             return Ok(response);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateProduct(CreateProductCommandRequest request)
+        {
+            await mediator.Send(request);
+
+            return Ok();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateProduct(UpdateProductCommandRequest request)
+        {
+            await mediator.Send(request);
+
+            return Ok();
         }
     }
 }

@@ -10,6 +10,19 @@ namespace TemplateApi.Domain.Entities
 {
     public class Product: EntityBase
     {
+        public Product()
+        {
+                
+        }
+        public Product(string Title, string Description, int BrandId, decimal Price,
+            decimal Discount)
+        {
+            this.Title = Title;
+            this.Description = Description;
+            this.BrandId = BrandId;
+            this.Price = Price;
+            this.Discount = Discount;
+        }
         public string Title { get; set; }
         public string Description { get; set; }
         public int BrandId { get; set; }
@@ -18,7 +31,7 @@ namespace TemplateApi.Domain.Entities
         public Brand Brand { get; set; }
 
         //Bir ürünün category ile çoka çok ilişki de olması gerekli !
-        public ICollection<Category> Categories { get; set; }
+        public ICollection<ProductCategory> ProductCategories { get; set; }
 
     }
 }
