@@ -29,8 +29,8 @@ namespace TemplateApi.Application.Features.Products.Command.CreateProduct
                         ProductId = product.Id,
                         CategoryId = item
 
-                    })
-;
+                    });                
+               //rollback
                 await unitOfWork.SaveAsync();
 
             }
