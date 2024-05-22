@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using FluentValidation;
+using Microsoft.AspNetCore.Http;
 using SendGrid.Helpers.Errors.Model;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+
 
 namespace TemplateApi.Application.Exceptions
 {
@@ -29,6 +31,15 @@ namespace TemplateApi.Application.Exceptions
 			int statusCode = GetStatusCode(exception);
 			httpContext.Response.StatusCode = statusCode;
 			httpContext.Response.ContentType = "application/json";
+
+			if (exception.GetType() == typeof(ValidationException))
+				return httpContext.Response.WriteAsync(new ExceptionModel
+				{
+					Errors = ((ValidationException)exception).Errors.Select(x => x.ErrorMessage),
+					StatusCode = StatusCodes.Status400BadRequest
+
+				}.ToString());
+			
 
 			List<string> errors = new()
 			{ 
