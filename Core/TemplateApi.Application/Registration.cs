@@ -8,6 +8,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using TemplateApi.Application.Bases;
 using TemplateApi.Application.Beheviors;
 using TemplateApi.Application.Exceptions;
 
@@ -19,7 +20,9 @@ namespace TemplateApi.Application
         {
             var assembly = Assembly.GetExecutingAssembly();
 
-            services.AddSingleton<ExceptionMiddleware>();
+            services.AddTransient<ExceptionMiddleware>();
+
+            services.AddRulesFromAssemblyContaining(assembly, typeof(BaseRules));
 
             services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(assembly));
 
@@ -29,5 +32,17 @@ namespace TemplateApi.Application
 
             services.AddTransient(typeof(IPipelineBehavior<,>), typeof(FluentValidationBehevior<,>));
         }
+
+        private static IServiceCollection AddRulesFromAssemblyContaining(this IServiceCollection services, Assembly assembly, Type type)
+        {
+            var types = assembly.GetTypes().Where(t => t.IsSubclassOf(type) && type != t).ToList();
+            foreach (var item in types)
+                services.AddTransient(item);
+
+            return services;
+            
+        }
+
+
     }
 }

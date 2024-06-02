@@ -39,12 +39,12 @@ namespace TemplateApi.Application.Exceptions
 					StatusCode = StatusCodes.Status400BadRequest
 
 				}.ToString());
-			
+
 
 			List<string> errors = new()
-			{ 
-				exception.Message,
-				exception.InnerException?.ToString()
+			{
+				$"Hata Mesajı: {exception.Message}"
+
 			};
 
 			return httpContext.Response.WriteAsync(new ExceptionModel
