@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TemplateApi.Application.Interfaces.Repositories;
 using TemplateApi.Application.Interfaces.UnitOfWorks;
+using TemplateApi.Domain.Entities;
 using TemplateApi.Persistence.Context;
 using TemplateApi.Persistence.Repositories;
 using TemplateApi.Persistence.UnitOfWorks;
@@ -28,7 +29,19 @@ namespace TemplateApi.Persistence
             //DI
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-        }
+            services.AddIdentityCore<User>(opt =>
+           {
+               opt.Password.RequireNonAlphanumeric = false;
+               opt.Password.RequiredLength = 2;
+               opt.Password.RequireLowercase = false;
+               opt.Password.RequireUppercase = false;
+               opt.Password.RequireDigit = false;
+               opt.SignIn.RequireConfirmedEmail = false;
+           })
+                .AddRoles<Role>()
+                .AddEntityFrameworkStores<AppDbContext>();
+
+            }
 
         
     }
